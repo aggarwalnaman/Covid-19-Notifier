@@ -21,12 +21,17 @@ if __name__ == "__main__":
     soup = BeautifulSoup(myHtmlData, 'html.parser')
     myDataStr=""
     for tr in soup.find_all('tbody')[9].find_all('tr'):
+        # for td in soup.tr.find_all('td'):
         myDataStr += tr.get_text()
+        myDataStr += "\n"
+    # print(str(myDataStr))
     myDataStr=myDataStr[1:]
-    itemList=myDataStr.split("\n\n")
+    itemList=myDataStr.split("\n\n\n")
+    # print(itemList)
     states = ['Chandigarh','Uttarakhand','Uttar Pradesh','Haryana','Delhi']
-    for item in itemList[1:27]:
-        dataList = item.split('\n')
+    for item in itemList[0:27]:
+        dataList = item.split("\n")
+        print(dataList)
         if dataList[1] in states:
             nText=f"STATE => {dataList[1]} \n Total : {dataList[2]}\n cured : {dataList[4]}\n Deaths : {dataList[5]} "
             notifyMe("Cases of Covid-19",nText)
