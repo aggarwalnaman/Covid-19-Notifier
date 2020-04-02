@@ -20,7 +20,7 @@ if __name__ == "__main__":
 
     soup = BeautifulSoup(myHtmlData, 'html.parser')
     myDataStr=""
-    for tr in soup.find_all('tbody')[9].find_all('tr'):
+    for tr in soup.find_all('tbody')[0].find_all('tr'):
         # for td in soup.tr.find_all('td'):
         myDataStr += tr.get_text()
         myDataStr += "\n"
@@ -33,7 +33,7 @@ if __name__ == "__main__":
         dataList = item.split("\n")
         print(dataList)
         if dataList[1] in states:
-            nText=f"STATE => {dataList[1]} \n Total : {dataList[2]}\n cured : {dataList[4]}\n Deaths : {dataList[5]} "
+            nText=f"STATE => {dataList[1]} \n Total : {dataList[2]}\n cured : {dataList[3]}\n Deaths : {dataList[4]} "
             notifyMe("Cases of Covid-19",nText)
             time.sleep(2)
             # print(nText)
