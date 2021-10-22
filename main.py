@@ -16,6 +16,7 @@ def getData(url):
 
 if __name__ == "__main__":
     # notifyMe("Indians","Lets Stop the spread of corona virus togethor")
+#     https://github.com/utkarsh1810/To-Do_React_App
     myHtmlData = getData('https://www.mohfw.gov.in/')
 
     soup = BeautifulSoup(myHtmlData, 'html.parser')
@@ -37,4 +38,6 @@ if __name__ == "__main__":
             notifyMe("Cases of Covid-19",nText)
             time.sleep(2)
             # print(nText)
+            # print(nText)
+            
         
